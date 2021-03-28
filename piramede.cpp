@@ -86,6 +86,76 @@ void piramede()
 
     }
 
+void cubo()
+    {
+        glClear(GL_COLOR_BUFFER_BIT);
+        glPolygonMode(GL_FRONT, GL_LINE);
+
+        glColor3f(0.0,0.0,1.0);
+        glLineWidth(2);
+
+        int comprimento = 50;
+
+        // first square
+
+        int pontoOneX = 550;
+        int pontoOneY = 100;
+
+        int pontoTwoX = 200;
+        int pontoTwoY = pontoOneY;
+
+        int pontoThreeX = 150;
+        int pontoThreeY = pontoOneY - comprimento;
+
+        int pontoFourX = 500;
+        int pontoFourY = pontoThreeY;
+
+        // second square
+
+        int pontoFiveX = pontoOneX;
+        int pontoFiveY = 550;
+
+        int pontoSexX = pontoTwoX;
+        int pontoSexY = pontoFiveY;
+
+        int pontoSevenX = pontoThreeX;
+        int pontoSevenY = pontoFiveY - comprimento;
+
+        int pontoEightX = pontoFourX;
+        int pontoEightY = pontoSevenY;
+
+
+        glBegin(GL_QUADS);
+
+        glVertex2i(pontoOneX,pontoOneY); glVertex2i(pontoTwoX,pontoTwoY);
+        glVertex2i(pontoThreeX,pontoThreeY); glVertex2i(pontoFourX,pontoFourY);
+
+        glEnd();
+
+        glBegin(GL_QUADS);
+
+        glVertex2i(pontoFiveX,pontoFiveY);  glVertex2i(pontoSexX,pontoSexY);
+        glVertex2i(pontoSevenX,pontoSevenY);   glVertex2i(pontoEightX,pontoEightY);
+
+        glEnd();
+
+        glBegin(GL_QUADS);
+
+        glVertex2i(pontoOneX,pontoOneY); glVertex2i(pontoFiveX,pontoFiveY); 
+        glVertex2i(pontoEightX,pontoEightY); glVertex2i(pontoFourX,pontoFourY);
+
+        glEnd();
+
+        glBegin(GL_QUADS);
+
+        glVertex2i(pontoThreeX,pontoThreeY);  glVertex2i(pontoSevenX,pontoSevenY);
+        glVertex2i(pontoSexX,pontoSexY); glVertex2i(pontoTwoX,pontoTwoY);
+
+        glEnd();
+
+        glutSwapBuffers();
+    } //d2
+
 int main(int argc, char ** argv) 
 
     {
@@ -103,7 +173,7 @@ int main(int argc, char ** argv)
     init();
 
 
-    glutDisplayFunc(piramede);  
+    glutDisplayFunc(cubo);  
 
 
     glutMainLoop();
