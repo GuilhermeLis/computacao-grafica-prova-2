@@ -184,7 +184,7 @@ void cubo()
         glClear(GL_COLOR_BUFFER_BIT);
         glPolygonMode(GL_FRONT, GL_LINE);
 
-        glColor3f(0.0,0.0,1.0);
+        glColor3f(0.0,0.8,1.0);
         glLineWidth(2);
 
         int comprimento = 50;
