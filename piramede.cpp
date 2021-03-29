@@ -57,25 +57,21 @@ void piramede()
 
         glBegin(GL_QUADS);
 
-        glVertex2i(pontoOneX,pontoOneY);
-        glVertex2i(pontoThreeX,pontoOneY);
-        glVertex2i(pontoTwoX,pontoTwoY);
-        glVertex2i(pontoFourX,pontoTwoY);
+        glVertex2i(pontoOneX,pontoOneY); glVertex2i(pontoThreeX,pontoOneY);
+        glVertex2i(pontoTwoX,pontoTwoY); glVertex2i(pontoFourX,pontoTwoY);
 
         glEnd(); // Base do quadrado
 
         glBegin(GL_POLYGON);
 
-        glVertex2i(pontoOneX,pontoOneY);
-        glVertex2i(pontoFourX,pontoTwoY);
+        glVertex2i(pontoOneX,pontoOneY); glVertex2i(pontoFourX,pontoTwoY);
         glVertex2i(pontoFiveX,pontoFiveY);
 
         glEnd();
 
         glBegin(GL_POLYGON);
 
-        glVertex2i(pontoTwoX,pontoTwoY);
-        glVertex2i(pontoThreeX,pontoOneY);
+        glVertex2i(pontoTwoX,pontoTwoY); glVertex2i(pontoThreeX,pontoOneY);
         glVertex2i(pontoFiveX,pontoFiveY);
 
         glEnd();
@@ -85,6 +81,103 @@ void piramede()
 
 
     }
+
+
+  void casa()
+    {
+        glClear(GL_COLOR_BUFFER_BIT);
+        glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+
+        glColor3f(0.0,0.0,0.0);
+
+        // roof
+
+        int pontoOneX = 100;
+        int pontoTwoY = 300;
+
+        int pontoThreeX = 300;
+        int pontoThreeY= pontoTwoY;
+
+        int pontoFourX = pontoOneX + ((pontoThreeX - pontoOneX) / 2) ;
+        int pontoFourY = 430;
+
+        // Wall 
+
+        int pontoFiveX = pontoOneX;
+        int pontoFiveY = pontoTwoY;
+
+        int pontoSexX = pontoThreeX;
+        int pontoSexY = pontoThreeY;
+
+        int pontoSevenX = pontoSexX;
+        int pontoSevenY = 100;
+
+        int PontoEightX = pontoFiveX ;
+        int PontoEightY = pontoSevenY;
+
+
+        // Door
+
+        int pontoNineX = PontoEightX + 40 ;
+        int pontoNineY = PontoEightY;
+
+        int pontoTenX = pontoNineX + 50;
+        int pontoTenY = pontoNineY;
+
+        int pontoElevenX = pontoTenX;
+        int pontoElevenY = pontoNineX + 50;
+
+        int pontoTwelveX = pontoNineX ;
+        int pontoTwelveY = pontoElevenY;
+
+
+        // window
+
+        int pontoThirteenX = pontoTwelveX + 70;
+        int pontoThirteenY = 170;
+
+        int pontoFourteenX = pontoThirteenX + 70;
+        int pontoFourteenY = pontoThirteenY;
+
+        int pontoFifteenX = pontoFourteenX;
+        int pontoFifteenY = pontoThirteenY + 60;
+
+        int pontoSixteenX = pontoThirteenX ;
+        int pontoSixteenY = pontoFifteenY;
+
+
+
+        glBegin(GL_TRIANGLES); //roof
+
+        glVertex2i(pontoOneX,pontoTwoY); glVertex2i(pontoThreeX,pontoThreeY);
+        glVertex2i(pontoFourX,pontoFourY);
+
+        glEnd();
+
+        glBegin(GL_QUADS); //Wall
+
+        glVertex2i(pontoFiveX,pontoFiveY);glVertex2i(pontoSexX,pontoSexY);
+        glVertex2i(pontoSevenX,pontoSevenY);glVertex2i(PontoEightX,PontoEightY);
+
+        glEnd();
+
+        glBegin(GL_QUADS); // Door
+
+        glVertex2i(pontoNineX,pontoNineY); glVertex2i(pontoTenX,pontoTenY);
+        glVertex2i(pontoElevenX,pontoElevenY); glVertex2i(pontoTwelveX,pontoTwelveY);
+
+        glEnd();
+
+        glBegin(GL_QUADS); // window
+
+        glVertex2i(pontoThirteenX,pontoThirteenY); glVertex2i(pontoFourteenX,pontoFourteenY);
+        glVertex2i(pontoFifteenX,pontoFifteenY);   glVertex2i(pontoSixteenX,pontoSixteenY);
+
+        glEnd();
+
+        glutSwapBuffers();
+    }
+
 
 void cubo()
     {
@@ -173,7 +266,7 @@ int main(int argc, char ** argv)
     init();
 
 
-    glutDisplayFunc(cubo);  
+    glutDisplayFunc(casa);  
 
 
     glutMainLoop();

@@ -32,6 +32,6 @@ To use the OpenGL library, you must run the following command lines:
 
 To run your program, you must write the following command lines:
 
-g++ NameOfYourProgram.cpp -o build/NameOfYourProgram -lGL -lGLU -lglut 
+g++ NameOfYourProgram.cpp -o build/NameOfYourProgram -lGL -lGLU -lglut && ./build/NameOfYourProgram
 
 P.S.: Don't forget to write the libs in that particular order.
