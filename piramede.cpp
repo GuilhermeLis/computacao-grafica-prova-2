@@ -261,12 +261,15 @@ int main(int argc, char ** argv)
     glutInitWindowSize (1000, 1000);
     glutInitWindowPosition (100, 100);
 
-    glutCreateWindow("Piramade");
+    glutCreateWindow("introdução");
 
     init();
 
 
     glutDisplayFunc(casa);  
+    // glutDisplayFunc(cubo);  
+    // glutDisplayFunc(piramede);  
+
 
 
     glutMainLoop();
